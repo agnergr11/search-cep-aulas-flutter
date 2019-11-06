@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
+
 class ResultCep {
   String cep;
   String logradouro;
@@ -13,7 +15,7 @@ class ResultCep {
 
   ResultCep({
     this.cep,
-    this.logradouro,
+    this.logradouro, 
     this.complemento,
     this.bairro,
     this.localidade,
@@ -28,6 +30,7 @@ class ResultCep {
   String toJson() => json.encode(toMap());
 
   factory ResultCep.fromMap(Map<String, dynamic> json) => ResultCep(
+    
         cep: json["cep"] == null ? null : json["cep"],
         logradouro: json["logradouro"] == null ? null : json["logradouro"],
         complemento: json["complemento"] == null ? null : json["complemento"],
@@ -39,7 +42,8 @@ class ResultCep {
         gia: json["gia"] == null ? null : json["gia"],
       );
 
-  Map<String, dynamic> toMap() => {
+  Map<String, dynamic> toMap() =>  {
+    
         "cep": cep == null ? null : cep,
         "logradouro": logradouro == null ? null : logradouro,
         "complemento": complemento == null ? null : complemento,
@@ -49,5 +53,6 @@ class ResultCep {
         "unidade": unidade == null ? null : unidade,
         "ibge": ibge == null ? null : ibge,
         "gia": gia == null ? null : gia,
+      
       };
 }
